@@ -1,101 +1,1098 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Eliott - Sensibilisation à la Cybercriminalité</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f6f9;
-      margin: 0;
-      padding: 20px;
-      color: #333;
-    }
-    header {
-      background-color: #c62828;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    section {
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h2 {
-      color: #c62828;
-    }
-    ul {
-      list-style-type: disc;
-      padding-left: 20px;
-    }
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #777;
-    }
-    a {
-      color: #c62828;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    img {
-      max-width: 100%;
-      margin: 20px 0;
-      border-radius: 8px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarix Hub - Votre boutique en ligne</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2980b9;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid white;
+            color: white;
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .btn-danger {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        .btn-danger:hover {
+            background-color: #c0392b;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        /* Products Section */
+        .section-title {
+            text-align: center;
+            margin: 3rem 0 2rem;
+            color: var(--primary);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .product-image {
+            height: 200px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-price {
+            font-weight: bold;
+            color: var(--accent);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .product-description {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        /* Forms */
+        .form-container {
+            max-width: 500px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        /* Dashboard */
+        .dashboard {
+            display: flex;
+            min-height: calc(100vh - 140px);
+        }
+        
+        .sidebar {
+            width: 250px;
+            background: var(--primary);
+            color: white;
+            padding: 2rem 0;
+        }
+        
+        .sidebar ul {
+            list-style: none;
+        }
+        
+        .sidebar ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .sidebar ul li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: background 0.3s;
+        }
+        
+        .sidebar ul li a:hover, .sidebar ul li a.active {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .dashboard-content {
+            flex: 1;
+            padding: 2rem;
+        }
+        
+        /* Admin Panel */
+        .admin-panel {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .admin-table th, .admin-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .admin-table th {
+            background-color: #f5f5f5;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-section ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .dashboard {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+            }
+        }
+        
+        /* Hidden elements */
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">Jarix<span>Hub</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="nav-link" data-page="home">Accueil</a></li>
+                    <li><a href="#" class="nav-link" data-page="products">Produits</a></li>
+                    <li><a href="#" class="nav-link" data-page="about">À propos</a></li>
+                    <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-outline" id="loginBtn">Connexion</button>
+                <button class="btn btn-primary" id="registerBtn">Inscription</button>
+                <button class="btn btn-danger hidden" id="logoutBtn">Déconnexion</button>
+                <button class="btn btn-primary hidden" id="adminBtn">Admin</button>
+            </div>
+        </div>
+    </header>
 
-  <header>
-    <h1>Eliott — Sensibilisation à la Cybercriminalité</h1>
-  </header>
+    <!-- Main Content -->
+    <main>
+        <!-- Home Page -->
+        <section id="home-page" class="page">
+            <div class="hero">
+                <div class="container">
+                    <h1>Bienvenue sur Jarix Hub</h1>
+                    <p>Découvrez notre sélection exclusive de produits de qualité. Des prix imbattables et une livraison rapide.</p>
+                    <button class="btn btn-primary">Découvrir nos produits</button>
+                </div>
+            </div>
 
-  <section>
-    <p>La cybercriminalité désigne les actes illégaux commis à l'aide d'Internet. Elle inclut :</p>
-    <ul>
-      <li>Phishing (hameçonnage)</li>
-      <li>Vols de données</li>
-      <li>Arnaques en ligne</li>
-      <li>Cyberharcèlement</li>
-      <li>Ransomware</li>
-    </ul>
+            <div class="container">
+                <h2 class="section-title">Nos produits populaires</h2>
+                <div class="products-grid" id="featured-products">
+                    <!-- Produits chargés dynamiquement -->
+                </div>
+            </div>
+        </section>
 
-    <h2>Comment se protéger ?</h2>
-    <ul>
-      <li>Utiliser des mots de passe forts</li>
-      <li>Activer la double authentification</li>
-      <li>Ne pas cliquer sur des liens suspects</li>
-      <li>Mettre à jour ses logiciels</li>
-      <li>Éduquer ses proches</li>
-    </ul>
+        <!-- Products Page -->
+        <section id="products-page" class="page hidden">
+            <div class="container">
+                <h2 class="section-title">Tous nos produits</h2>
+                <div class="products-grid" id="all-products">
+                    <!-- Produits chargés dynamiquement -->
+                </div>
+            </div>
+        </section>
 
-    <h2>Exemples</h2>
-    <p>- Un email qui demande vos coordonnées bancaires ? C’est peut-être une arnaque.<br>
-    - Un message alarmant sur WhatsApp ? Vérifiez l’info avant de la partager.</p>
+        <!-- About Page -->
+        <section id="about-page" class="page hidden">
+            <div class="container">
+                <h2 class="section-title">À propos de Jarix Hub</h2>
+                <div class="form-container">
+                    <p>Jarix Hub est une plateforme de vente en ligne créée pour offrir à ses clients une expérience d'achat unique. Nous nous engageons à fournir des produits de qualité à des prix compétitifs.</p>
+                    <p>Notre équipe est dédiée à votre satisfaction et nous travaillons constamment pour améliorer notre service et élargir notre catalogue.</p>
+                </div>
+            </div>
+        </section>
 
-    <h2>Que faire en cas d'attaque ?</h2>
-    <p>Contactez les autorités ou rendez-vous sur :<br>
-      <a href="https://www.cybermalveillance.gouv.fr" target="_blank">
-        www.cybermalveillance.gouv.fr
-      </a>
-    </p>
+        <!-- Contact Page -->
+        <section id="contact-page" class="page hidden">
+            <div class="container">
+                <h2 class="section-title">Contactez-nous</h2>
+                <div class="form-container">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nom</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </section>
 
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Padlock_Simple.svg/512px-Padlock_Simple.svg.png" alt="Sécurité en ligne">
+        <!-- Login Page -->
+        <section id="login-page" class="page hidden">
+            <div class="container">
+                <h2 class="section-title">Connexion</h2>
+                <div class="form-container">
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="login-email">Email</label>
+                            <input type="email" id="login-email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Mot de passe</label>
+                            <input type="password" id="login-password" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Se connecter</button>
+                    </form>
+                    <p class="text-center" style="margin-top: 1rem;">
+                        Pas de compte? <a href="#" id="show-register">Créer un compte</a>
+                    </p>
+                </div>
+            </div>
+        </section>
 
-  </section>
+        <!-- Register Page -->
+        <section id="register-page" class="page hidden">
+            <div class="container">
+                <h2 class="section-title">Inscription</h2>
+                <div class="form-container">
+                    <form id="register-form">
+                        <div class="form-group">
+                            <label for="register-name">Nom complet</label>
+                            <input type="text" id="register-name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-email">Email</label>
+                            <input type="email" id="register-email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-password">Mot de passe</label>
+                            <input type="password" id="register-password" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-confirm">Confirmer le mot de passe</label>
+                            <input type="password" id="register-confirm" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">S'inscrire</button>
+                    </form>
+                    <p class="text-center" style="margin-top: 1rem;">
+                        Déjà un compte? <a href="#" id="show-login">Se connecter</a>
+                    </p>
+                </div>
+            </div>
+        </section>
 
-  <footer>
-    © 2025 Eliott — Pour un web plus sûr.
-  </footer>
+        <!-- User Dashboard -->
+        <section id="user-dashboard" class="page hidden">
+            <div class="dashboard">
+                <div class="sidebar">
+                    <ul>
+                        <li><a href="#" class="dashboard-nav active" data-section="profile">Mon profil</a></li>
+                        <li><a href="#" class="dashboard-nav" data-section="orders">Mes commandes</a></li>
+                        <li><a href="#" class="dashboard-nav" data-section="wishlist">Ma liste de souhaits</a></li>
+                    </ul>
+                </div>
+                <div class="dashboard-content">
+                    <div id="profile-section" class="dashboard-section">
+                        <h2>Mon profil</h2>
+                        <div class="admin-panel">
+                            <p>Bienvenue dans votre espace personnel!</p>
+                            <p>Ici, vous pouvez gérer vos informations personnelles, consulter vos commandes et suivre vos livraisons.</p>
+                        </div>
+                    </div>
+                    <div id="orders-section" class="dashboard-section hidden">
+                        <h2>Mes commandes</h2>
+                        <div class="admin-panel">
+                            <p>Vous n'avez pas encore passé de commande.</p>
+                        </div>
+                    </div>
+                    <div id="wishlist-section" class="dashboard-section hidden">
+                        <h2>Ma liste de souhaits</h2>
+                        <div class="admin-panel">
+                            <p>Votre liste de souhaits est vide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- Admin Dashboard -->
+        <section id="admin-dashboard" class="page hidden">
+            <div class="dashboard">
+                <div class="sidebar">
+                    <ul>
+                        <li><a href="#" class="admin-nav active" data-section="products-admin">Gérer les produits</a></li>
+                        <li><a href="#" class="admin-nav" data-section="orders-admin">Commandes</a></li>
+                        <li><a href="#" class="admin-nav" data-section="users-admin">Utilisateurs</a></li>
+                        <li><a href="#" class="admin-nav" data-section="analytics-admin">Analytiques</a></li>
+                    </ul>
+                </div>
+                <div class="dashboard-content">
+                    <div id="products-admin-section" class="admin-section">
+                        <h2>Gestion des produits</h2>
+                        <div class="admin-panel">
+                            <button class="btn btn-primary" id="add-product-btn">Ajouter un produit</button>
+                            
+                            <div id="product-form" class="hidden" style="margin-top: 2rem;">
+                                <h3>Ajouter/Modifier un produit</h3>
+                                <form id="admin-product-form">
+                                    <div class="form-group">
+                                        <label for="product-name">Nom du produit</label>
+                                        <input type="text" id="product-name" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="product-price">Prix</label>
+                                        <input type="number" id="product-price" class="form-control" step="0.01" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="product-description">Description</label>
+                                        <textarea id="product-description" class="form-control" rows="3" required></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="product-image">URL de l'image</label>
+                                        <input type="text" id="product-image" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="product-category">Catégorie</label>
+                                        <input type="text" id="product-category" class="form-control">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                                    <button type="button" class="btn btn-outline" id="cancel-product-btn">Annuler</button>
+                                </form>
+                            </div>
+                            
+                            <h3 style="margin-top: 2rem;">Liste des produits</h3>
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nom</th>
+                                        <th>Prix</th>
+                                        <th>Catégorie</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="products-table-body">
+                                    <!-- Produits chargés dynamiquement -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="orders-admin-section" class="admin-section hidden">
+                        <h2>Gestion des commandes</h2>
+                        <div class="admin-panel">
+                            <p>Interface de gestion des commandes à venir.</p>
+                        </div>
+                    </div>
+                    <div id="users-admin-section" class="admin-section hidden">
+                        <h2>Gestion des utilisateurs</h2>
+                        <div class="admin-panel">
+                            <p>Interface de gestion des utilisateurs à venir.</p>
+                        </div>
+                    </div>
+                    <div id="analytics-admin-section" class="admin-section hidden">
+                        <h2>Analytiques</h2>
+                        <div class="admin-panel">
+                            <p>Tableau de bord analytique à venir.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Jarix Hub</h3>
+                    <p>Votre boutique en ligne de confiance pour tous vos besoins.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liens rapides</h3>
+                    <ul>
+                        <li><a href="#" class="nav-link" data-page="home">Accueil</a></li>
+                        <li><a href="#" class="nav-link" data-page="products">Produits</a></li>
+                        <li><a href="#" class="nav-link" data-page="about">À propos</a></li>
+                        <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>Email: contact@jarixhub.com</li>
+                        <li>Téléphone: +33 1 23 45 67 89</li>
+                        <li>Adresse: 123 Rue du Commerce, Paris</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Jarix Hub. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Données simulées pour les produits
+        const products = [
+            {
+                id: 1,
+                name: "Smartphone Premium",
+                price: 699.99,
+                description: "Un smartphone haut de gamme avec écran AMOLED et triple appareil photo.",
+                image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+                category: "Électronique"
+            },
+            {
+                id: 2,
+                name: "Casque Audio Sans Fil",
+                price: 199.99,
+                description: "Casque audio sans fil avec réduction de bruit active.",
+                image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+                category: "Électronique"
+            },
+            {
+                id: 3,
+                name: "Montre Connectée",
+                price: 249.99,
+                description: "Montre connectée avec suivi d'activité et notifications.",
+                image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+                category: "Électronique"
+            },
+            {
+                id: 4,
+                name: "Sac à Dos Urbain",
+                price: 79.99,
+                description: "Sac à dos élégant et fonctionnel pour un usage quotidien.",
+                image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+                category: "Mode"
+            }
+        ];
+
+        // État de l'application
+        let currentUser = null;
+        let isAdmin = false;
+        let editingProductId = null;
+
+        // Initialisation de l'application
+        document.addEventListener('DOMContentLoaded', function() {
+            // Charger les produits
+            loadProducts();
+            
+            // Écouteurs d'événements pour la navigation
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const page = this.getAttribute('data-page');
+                    showPage(page);
+                });
+            });
+            
+            // Écouteurs pour les boutons d'authentification
+            document.getElementById('loginBtn').addEventListener('click', function() {
+                showPage('login');
+            });
+            
+            document.getElementById('registerBtn').addEventListener('click', function() {
+                showPage('register');
+            });
+            
+            document.getElementById('logoutBtn').addEventListener('click', function() {
+                logout();
+            });
+            
+            document.getElementById('adminBtn').addEventListener('click', function() {
+                showPage('admin-dashboard');
+            });
+            
+            // Écouteurs pour les formulaires
+            document.getElementById('login-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                login();
+            });
+            
+            document.getElementById('register-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                register();
+            });
+            
+            document.getElementById('contact-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Message envoyé! Nous vous répondrons bientôt.');
+                document.getElementById('contact-form').reset();
+            });
+            
+            // Écouteurs pour les liens d'inscription/connexion
+            document.getElementById('show-register').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('register');
+            });
+            
+            document.getElementById('show-login').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('login');
+            });
+            
+            // Écouteurs pour le tableau de bord utilisateur
+            document.querySelectorAll('.dashboard-nav').forEach(nav => {
+                nav.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const section = this.getAttribute('data-section');
+                    showDashboardSection(section);
+                    
+                    // Mettre à jour la classe active
+                    document.querySelectorAll('.dashboard-nav').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                });
+            });
+            
+            // Écouteurs pour le tableau de bord admin
+            document.querySelectorAll('.admin-nav').forEach(nav => {
+                nav.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const section = this.getAttribute('data-section');
+                    showAdminSection(section);
+                    
+                    // Mettre à jour la classe active
+                    document.querySelectorAll('.admin-nav').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                });
+            });
+            
+            // Écouteurs pour la gestion des produits (admin)
+            document.getElementById('add-product-btn').addEventListener('click', function() {
+                showProductForm();
+            });
+            
+            document.getElementById('cancel-product-btn').addEventListener('click', function() {
+                hideProductForm();
+                resetProductForm();
+            });
+            
+            document.getElementById('admin-product-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                saveProduct();
+            });
+            
+            // Vérifier si un utilisateur est déjà connecté
+            checkAuthStatus();
+        });
+
+        // Fonctions pour la navigation
+        function showPage(pageName) {
+            // Masquer toutes les pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.add('hidden');
+            });
+            
+            // Afficher la page demandée
+            document.getElementById(`${pageName}-page`).classList.remove('hidden');
+            
+            // Si c'est la page d'accueil, charger les produits en vedette
+            if (pageName === 'home') {
+                loadFeaturedProducts();
+            }
+            
+            // Si c'est la page des produits, charger tous les produits
+            if (pageName === 'products') {
+                loadAllProducts();
+            }
+        }
+
+        function showDashboardSection(sectionName) {
+            // Masquer toutes les sections
+            document.querySelectorAll('.dashboard-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Afficher la section demandée
+            document.getElementById(`${sectionName}-section`).classList.remove('hidden');
+        }
+
+        function showAdminSection(sectionName) {
+            // Masquer toutes les sections
+            document.querySelectorAll('.admin-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Afficher la section demandée
+            document.getElementById(`${sectionName}-section`).classList.remove('hidden');
+        }
+
+        // Fonctions pour les produits
+        function loadProducts() {
+            // En production, cela récupérerait les données depuis Google Sheets
+            // Pour cette démo, nous utilisons les données simulées
+        }
+
+        function loadFeaturedProducts() {
+            const featuredContainer = document.getElementById('featured-products');
+            featuredContainer.innerHTML = '';
+            
+            // Afficher les 3 premiers produits comme produits en vedette
+            products.slice(0, 3).forEach(product => {
+                featuredContainer.innerHTML += createProductCard(product);
+            });
+        }
+
+        function loadAllProducts() {
+            const allProductsContainer = document.getElementById('all-products');
+            allProductsContainer.innerHTML = '';
+            
+            products.forEach(product => {
+                allProductsContainer.innerHTML += createProductCard(product);
+            });
+        }
+
+        function createProductCard(product) {
+            return `
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">${product.name}</h3>
+                        <p class="product-price">${product.price.toFixed(2)} €</p>
+                        <p class="product-description">${product.description}</p>
+                        <button class="btn btn-primary">Ajouter au panier</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Fonctions d'authentification
+        function login() {
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            
+            // Simulation d'authentification
+            if (email && password) {
+                // Vérifier si c'est l'admin
+                if (email === 'admin@jarixhub.com' && password === 'admin123') {
+                    currentUser = { name: 'Administrateur', email: email };
+                    isAdmin = true;
+                } else {
+                    currentUser = { name: 'Utilisateur Test', email: email };
+                    isAdmin = false;
+                }
+                
+                updateAuthUI();
+                alert('Connexion réussie!');
+                showPage('home');
+            } else {
+                alert('Veuillez remplir tous les champs.');
+            }
+        }
+
+        function register() {
+            const name = document.getElementById('register-name').value;
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+            const confirm = document.getElementById('register-confirm').value;
+            
+            if (name && email && password && confirm) {
+                if (password === confirm) {
+                    currentUser = { name: name, email: email };
+                    isAdmin = false;
+                    
+                    updateAuthUI();
+                    alert('Inscription réussie! Vous êtes maintenant connecté.');
+                    showPage('home');
+                } else {
+                    alert('Les mots de passe ne correspondent pas.');
+                }
+            } else {
+                alert('Veuillez remplir tous les champs.');
+            }
+        }
+
+        function logout() {
+            currentUser = null;
+            isAdmin = false;
+            updateAuthUI();
+            alert('Déconnexion réussie!');
+            showPage('home');
+        }
+
+        function checkAuthStatus() {
+            // En production, cela vérifierait les cookies/tokens d'authentification
+            // Pour cette démo, nous utilisons l'état simulé
+        }
+
+        function updateAuthUI() {
+            const loginBtn = document.getElementById('loginBtn');
+            const registerBtn = document.getElementById('registerBtn');
+            const logoutBtn = document.getElementById('logoutBtn');
+            const adminBtn = document.getElementById('adminBtn');
+            
+            if (currentUser) {
+                loginBtn.classList.add('hidden');
+                registerBtn.classList.add('hidden');
+                logoutBtn.classList.remove('hidden');
+                
+                if (isAdmin) {
+                    adminBtn.classList.remove('hidden');
+                } else {
+                    adminBtn.classList.add('hidden');
+                }
+            } else {
+                loginBtn.classList.remove('hidden');
+                registerBtn.classList.remove('hidden');
+                logoutBtn.classList.add('hidden');
+                adminBtn.classList.add('hidden');
+            }
+        }
+
+        // Fonctions pour la gestion des produits (admin)
+        function showProductForm() {
+            document.getElementById('product-form').classList.remove('hidden');
+        }
+
+        function hideProductForm() {
+            document.getElementById('product-form').classList.add('hidden');
+        }
+
+        function resetProductForm() {
+            document.getElementById('admin-product-form').reset();
+            editingProductId = null;
+        }
+
+        function saveProduct() {
+            const name = document.getElementById('product-name').value;
+            const price = parseFloat(document.getElementById('product-price').value);
+            const description = document.getElementById('product-description').value;
+            const image = document.getElementById('product-image').value;
+            const category = document.getElementById('product-category').value;
+            
+            if (name && price && description) {
+                if (editingProductId) {
+                    // Modification d'un produit existant
+                    const productIndex = products.findIndex(p => p.id === editingProductId);
+                    if (productIndex !== -1) {
+                        products[productIndex] = {
+                            id: editingProductId,
+                            name,
+                            price,
+                            description,
+                            image: image || 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+                            category
+                        };
+                    }
+                } else {
+                    // Ajout d'un nouveau produit
+                    const newId = products.length > 0 ? Math.max(...products.map(p => p.id)) + 1 : 1;
+                    products.push({
+                        id: newId,
+                        name,
+                        price,
+                        description,
+                        image: image || 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+                        category
+                    });
+                }
+                
+                // Mettre à jour l'affichage
+                updateProductsTable();
+                loadAllProducts();
+                loadFeaturedProducts();
+                
+                // Réinitialiser le formulaire
+                resetProductForm();
+                hideProductForm();
+                
+                alert('Produit enregistré avec succès!');
+                
+                // En production, cela enverrait les données à Google Sheets
+                console.log('Produit sauvegardé:', { name, price, description, image, category });
+            } else {
+                alert('Veuillez remplir tous les champs obligatoires.');
+            }
+        }
+
+        function editProduct(id) {
+            const product = products.find(p => p.id === id);
+            if (product) {
+                document.getElementById('product-name').value = product.name;
+                document.getElementById('product-price').value = product.price;
+                document.getElementById('product-description').value = product.description;
+                document.getElementById('product-image').value = product.image;
+                document.getElementById('product-category').value = product.category;
+                
+                editingProductId = id;
+                showProductForm();
+            }
+        }
+
+        function deleteProduct(id) {
+            if (confirm('Êtes-vous sûr de vouloir supprimer ce produit?')) {
+                const productIndex = products.findIndex(p => p.id === id);
+                if (productIndex !== -1) {
+                    products.splice(productIndex, 1);
+                    updateProductsTable();
+                    loadAllProducts();
+                    loadFeaturedProducts();
+                    alert('Produit supprimé avec succès!');
+                }
+            }
+        }
+
+        function updateProductsTable() {
+            const tableBody = document.getElementById('products-table-body');
+            tableBody.innerHTML = '';
+            
+            products.forEach(product => {
+                tableBody.innerHTML += `
+                    <tr>
+                        <td>${product.id}</td>
+                        <td>${product.name}</td>
+                        <td>${product.price.toFixed(2)} €</td>
+                        <td>${product.category}</td>
+                        <td>
+                            <button class="btn btn-primary" onclick="editProduct(${product.id})">Modifier</button>
+                            <button class="btn btn-danger" onclick="deleteProduct(${product.id})">Supprimer</button>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        // Initialiser le tableau des produits dans l'admin
+        updateProductsTable();
+    </script>
 </body>
 </html>
